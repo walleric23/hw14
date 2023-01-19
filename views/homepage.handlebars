@@ -1,0 +1,16 @@
+<!-- Loop over each object in the postings array -->
+{{#each postings as |posting| }}
+<div class="row mb-4 posting">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <a href="/posting/{{posting.id}}">{{posting.name}}</a>
+    </h2>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{posting.description}}
+    </p>
+  </div>
+</div>
+{{/each}}

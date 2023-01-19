@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New posting:</h3>
+
+    <form class="form new-posting-form">
+      <div class="form-group">
+        <label for="posting-name">posting name:</label>
+        <input class="form-input" type="text" id="posting-name" name="posting-name" />
+      </div>
+      <div class="form-group">
+        <label for="posting-desc">description:</label>
+        <textarea class="form-input" id="posting-desc" name="posting-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if postings.length}}
+  <div class="col-md-6 posting-list">
+    <h3>Current postings:</h3>
+
+    {{#each postings as |posting|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/posting/{{posting.id}}">{{posting.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{posting.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
