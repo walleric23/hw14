@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// get route for a specific post
 router.get('/posting/:id', async (req, res) => {
   try {
     const postingData = await Posting.findByPk(req.params.id, {

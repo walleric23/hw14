@@ -1,8 +1,9 @@
+// requires
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Posting extends Model {}
-
+// sets object structure for posting
 Posting.init(
   {
     name: {
